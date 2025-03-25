@@ -30,7 +30,7 @@ my-personal-site
 
 1. **Clone the repository:**
    ```
-   git clone https://github.com/yourusername/my-personal-site.git
+   git clone https://github.com/thomasx-0/my-personal-site.git
    cd my-personal-site
    ```
 
