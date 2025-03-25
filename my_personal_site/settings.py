@@ -45,8 +45,8 @@ ROOT_URLCONF = 'my_personal_site.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [],  # Add custom template directories here if needed
+        'APP_DIRS': True,  # This ensures Django looks for templates in app directories
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
