@@ -1,10 +1,12 @@
 # My Personal Site
 
-This is a personal website built using Django. It serves as a platform to showcase my projects, skills, and interests.
+A personal website built using Django to showcase projects, skills, and interests.
+
+---
 
 ## Project Structure
 
-```
+```plaintext
 my-personal-site
 ├── my_personal_site
 │   ├── __init__.py
@@ -26,39 +28,52 @@ my-personal-site
 └── README.md
 ```
 
+---
+
 ## Setup Instructions
 
-1. **Clone the repository:**
-   ```
-   git clone https://github.com/thomasx-0/my-personal-site.git
-   cd my-personal-site
-   ```
+Follow these steps to set up the project locally:
 
-2. **Create a virtual environment:**
-   ```
-   python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-   ```
+### 1. Clone the Repository
 
-3. **Install the required packages:**
-   ```
-   pip install -r requirements.txt
-   ```
+```bash
+git clone https://github.com/thomasx-0/my-personal-site.git
+cd my-personal-site
+```
 
-4. **Run the migrations:**
-   ```
-   python manage.py migrate
-   ```
+### 2. Create a Virtual Environment
 
-5. **Start the development server:**
-   ```
-   python manage.py runserver
-   ```
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Apply Migrations
+
+```bash
+python manage.py migrate
+```
+
+### 5. Start the Development Server
+
+```bash
+python manage.py runserver
+```
+
+---
 
 ## Usage
 
-Visit `http://127.0.0.1:8000/` in your web browser to view the site.
+Visit the site at: [http://127.0.0.1:8000/](http://127.0.0.1:8000/) in your web browser.
+
+---
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
