@@ -8,7 +8,7 @@ def about(request):
     return render(request, 'personal_app/about.html')
 
 def blog_post_detail(request, post_id):
-    post = get_object_or_404(BlogPost, id=post_id)  # Fetch the blog post by ID
+    post = get_object_or_404(BlogPost, id=post_id)
     return render(request, 'personal_app/blog_post_detail.html', {'post': post})
 
 def blog_post_list(request):
