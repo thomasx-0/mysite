@@ -1,3 +1,23 @@
+/* Import Bootstrap CSS */
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
+
+/* Custom overrides for Bootstrap styles */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.btn-custom {
+    background-color: #34e0a1;
+    color: white;
+    border: none;
+}
+
+.btn-custom:hover {
+    background-color: #28b887;
+    color: white;
+}
+
 /* General styles for the blog */
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
