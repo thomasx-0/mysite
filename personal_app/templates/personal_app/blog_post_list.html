@@ -1,36 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     {% load static %}
-    <title>Blog Posts</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'personal_app/style.css' %}">
+    <meta charset="UTF-8">
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" href="{% static 'personal_app/style.css' %}">
 </head>
 <body>
-    <header class="bg-light py-5 text-center">
-        <div class="container">
-            <h1 class="display-4 fw-bold">Cherry Blossom Blog</h1>
-            <p class="lead fw-semibold">Your guide to the best cherry blossom spots.</p>
-        </div>
+    <header class="site-header">
+        <h1>{{ post.title }}</h1>
+        <p class="subtitle">A closer look at this blossom-filled destination</p>
     </header>
 
-    <main class="container py-5">
-        <div class="row g-4">
-            {% for post in posts %}
-                <div class="col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ post.title }}</h5>
-                            <p class="card-text">{{ post.content|slice:":100" }}...</p>
-                            <a href="{% url 'blog_post_detail' post.id %}" class="btn btn-primary">Read more</a>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
+    <main class="blog-detail">
+        <p class="meta"><strong>Author:</strong> {{ post.author }} | <strong>Category:</strong> {{ post.category }}</p>
+        <div class="content">
+            {{ post.content }}
         </div>
+        <p class="timestamp">Created: {{ post.created_at }} | Updated: {{ post.updated_at }}</p>
+        <a href="{% url 'blog_post_list' %}" class="back-link">← Back to blog</a>
     </main>
 
-    <footer class="bg-light text-center py-3">
-        &copy; 2025 My Personal Blog
+    <footer class="site-footer">
+        &copy; 2025 Cherry Blossom Journal
     </footer>
 </body>
 </html>
