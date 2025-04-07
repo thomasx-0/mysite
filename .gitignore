@@ -15,6 +15,7 @@ staticfiles/
 venv/
 env/
 *.egg-info/
+.venv/
 
 # IDEs and editors
 .vscode/
