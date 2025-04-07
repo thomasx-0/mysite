@@ -7,8 +7,11 @@
 </head>
 <body>
     <h1>{{ post.title }}</h1>
+    <p><strong>Author:</strong> {{ post.author }}</p>
+    <p><strong>Category:</strong> {{ post.category }}</p>
     <p>{{ post.content }}</p>
     <p><em>Created at: {{ post.created_at }}</em></p>
+    <p><em>Last updated: {{ post.updated_at }}</em></p>
     <a href="{% url 'blog_post_list' %}">Back to all posts</a>
 </body>
 </html>

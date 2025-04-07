@@ -10,6 +10,5 @@ urlpatterns = [
     path('blog/', views.blog_post_list, name='blog_post_list'),
     path('admin/', admin.site.urls),
     distill_url('', views.home, name='home', distill_func=get_index),
-    path('blog/', views.blog_post_list, name='blog_post_list'),
     path('blog/<int:post_id>/', views.blog_post_detail, name='blog_post_detail'),
 ]
