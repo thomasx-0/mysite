@@ -1,27 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    {% load static %}
-    <title>{{ post.title }}</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'personal_app/style.css' %}">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cherry Blossom Blog</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        Blog Post Details
-    </header>
-    <div class="container mt-5">
-        <div class="blog-post">
-            <h1>{{ post.title }}</h1>
-            <p><strong>Author:</strong> {{ post.author }}</p>
-            <p><strong>Category:</strong> {{ post.category }}</p>
-            <p>{{ post.content }}</p>
-            <p><em>Created at: {{ post.created_at }}</em></p>
-            <p><em>Last updated: {{ post.updated_at }}</em></p>
-            <a href="{% url 'blog_post_list' %}" class="btn btn-custom">Back to all posts</a>
-        </div>
-    </div>
-    <footer>
-        &copy; 2025 My Personal Blog
-    </footer>
+  <div class="article">
+    <h1>Cherry Blossom Adventures</h1>
+    <h2>Discover the best places to see cherry blossoms around the world.</h2>
+    <a href="blog_post_list.html" style="font-size: 1.2rem; color: #0066cc; text-decoration: underline;">→ Explore Blog Posts</a>
+  </div>
 </body>
 </html>
