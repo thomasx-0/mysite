@@ -86,4 +86,5 @@ USE_TZ = True
 
 # Static files
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATICFILES_DIRS = [BASE_DIR / 'personal_app/static']  # Point to your app's static directory
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Use a separate directory for collected static files
