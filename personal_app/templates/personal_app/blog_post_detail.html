@@ -6,28 +6,21 @@
     <link rel="stylesheet" type="text/css" href="{% static 'personal_app/style.css' %}">
 </head>
 <body>
-    <header class="bg-light py-5 text-center">
-        <div class="container">
-            <h1 class="display-4 fw-bold">{{ post.title }}</h1>
-            <p class="lead fw-semibold">A closer look at this blossom-filled destination</p>
-        </div>
+    <header>
+        Blog Post Details
     </header>
-
-    <main class="container py-5">
-        <div class="card shadow-sm">
-            <div class="card-body">
-                <h5 class="card-title">{{ post.title }}</h5>
-                <p class="text-muted mb-2"><strong>Author:</strong> {{ post.author }}</p>
-                <p class="text-muted mb-2"><strong>Category:</strong> {{ post.category }}</p>
-                <p class="card-text">{{ post.content }}</p>
-                <p class="text-muted"><em>Created at: {{ post.created_at }}</em></p>
-                <p class="text-muted"><em>Last updated: {{ post.updated_at }}</em></p>
-                <a href="{% url 'blog_post_list' %}" class="btn btn-primary mt-3">Back to all posts</a>
-            </div>
+    <div class="container mt-5">
+        <div class="blog-post">
+            <h1>{{ post.title }}</h1>
+            <p><strong>Author:</strong> {{ post.author }}</p>
+            <p><strong>Category:</strong> {{ post.category }}</p>
+            <p>{{ post.content }}</p>
+            <p><em>Created at: {{ post.created_at }}</em></p>
+            <p><em>Last updated: {{ post.updated_at }}</em></p>
+            <a href="{% url 'blog_post_list' %}" class="btn btn-custom">Back to all posts</a>
         </div>
-    </main>
-
-    <footer class="bg-light text-center py-3">
+    </div>
+    <footer>
         &copy; 2025 My Personal Blog
     </footer>
 </body>
