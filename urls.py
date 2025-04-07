@@ -1,10 +1,7 @@
-from django_distill import distill_path
-from . import views  # Import the views module
-
-def get_index():
-    return None  # No parameters for the index view
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
-    distill_path('', views.index, name='index', distill_func=get_index),
-    # Add more distill paths for other views as needed
+    path('admin/', admin.site.urls),
+    path('', include('personal_app.urls')),  # Include personal_app URLs
 ]
