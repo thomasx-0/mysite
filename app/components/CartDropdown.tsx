@@ -66,7 +66,7 @@ export default function CartDropdown({
     };
 
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+        <div className="absolute top-0 left-0 w-full h-full bg-white p-[10%]">
             <div className="bg-white border-2 border-black rounded-2xl p-4 w-11/12 max-w-xs mx-auto flex flex-col items-center">
                 <button className="self-end text-2xl font-bold mb-2" onClick={onClose}>&times;</button>
                 <h2 className="font-mono text-lg font-bold mb-2">Your Cart</h2>

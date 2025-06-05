@@ -59,8 +59,8 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center px-2 py-4">
-      <header className="w-full flex flex-col items-center mb-4">
+    <div className="min-h-screen bg-white flex flex-col items-start px-2 py-4">
+      <header className="w-full flex flex-col items-start mb-4">
         <button
           className="self-start mb-2 px-2 py-1 border border-black rounded-full text-xs font-mono tracking-widest hover:bg-gray-100 flex items-center gap-1"
           onClick={toggleCart}
@@ -72,8 +72,8 @@ export default function Index() {
             <span className="ml-2 bg-black text-white rounded-full px-2 py-0.5 text-xs font-mono">{cart.length}</span>
           )}
         </button>
-        <h1 className="text-2xl font-bold font-mono tracking-widest text-center mb-2">
-          S-MUSH STORE
+        <h1 className="text-2xl font-bold font-mono tracking-widest text-left mb-2">
+          S-MUSH TIENDA
         </h1>
       </header>
 
@@ -91,9 +91,13 @@ export default function Index() {
         />
       )}
 
-      <main className="grid grid-cols-2 gap-3 w-full max-w-xs">
+      <main className="grid grid-cols-2 gap-3 w-full max-w-xs px-[10%] py-[10%]">
         {products.map(product => (
-          <ProductBlock key={product.id} product={product} onAddToCart={addToCart} />
+          <ProductBlock
+            key={product.id}
+            product={product}
+            onAddToCart={addToCart}
+          />
         ))}
       </main>
     </div>

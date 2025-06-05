@@ -7,17 +7,18 @@ interface ProductBlockProps {
     onAddToCart: (productId: string) => void;
 }
 
-export default function ProductBlock({ product, onAddToCart }: ProductBlockProps) {
-    return (
-        <div className="flex flex-col items-center border-2 border-dotted border-black rounded-2xl p-2 min-w-[120px] bg-white">
-            <h3 className="font-mono text-xs font-bold tracking-widest text-center mb-1">{product.name}</h3>
-            <p className="font-mono text-xs text-center mb-1">${product.cost.toFixed(2)}</p>
-            <button
-                className="bg-lime-400 hover:bg-lime-500 text-black font-bold font-mono text-xs rounded-xl px-4 py-1 mt-1 border-2 border-black"
-                onClick={() => onAddToCart(product.id)}
-            >
-                BUY NOW
-            </button>
-        </div>
-    );
+export default function ProductBlock({ product, onAddToCart }: { product: Product; onAddToCart: (id: string) => void }) {
+  return (
+    <div className="border rounded-lg p-[10%] text-left">
+      <h2 className="text-lg font-bold">{product.name}</h2>
+      <p className="text-sm text-gray-600">{product.description}</p>
+      <p className="text-md font-semibold">${product.cost.toFixed(2)}</p>
+      <button
+        className="bg-lime-400 hover:bg-lime-500 text-black font-bold font-mono text-xs rounded-xl px-4 py-1 border-2 border-black w-full"
+        onClick={() => onAddToCart(product.id)}
+      >
+        Buy Now
+      </button>
+    </div>
+  );
 }
