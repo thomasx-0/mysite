@@ -31,13 +31,12 @@ export default function Index() {
         const existingItem = prevCart.find(item => item.id === productId);
         if (existingItem) {
           return prevCart.map(item =>
-              item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
+            item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
           );
         } else {
           return [...prevCart, { ...productToAdd, quantity: 1 }];
         }
       });
-      setIsCartOpen(true); // Open cart when item is added
     }
   };
 
@@ -62,8 +61,16 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-white flex flex-col items-center px-2 py-4">
       <header className="w-full flex flex-col items-center mb-4">
-        <button className="self-start mb-2 px-2 py-1 border border-black rounded-full text-xs font-mono tracking-widest hover:bg-gray-100">
-          TRAINER SIGN IN
+        <button
+          className="self-start mb-2 px-2 py-1 border border-black rounded-full text-xs font-mono tracking-widest hover:bg-gray-100 flex items-center gap-1"
+          onClick={toggleCart}
+          aria-label="Open cart"
+        >
+          🛒
+          <span className="ml-1">CART</span>
+          {cart.length > 0 && (
+            <span className="ml-2 bg-black text-white rounded-full px-2 py-0.5 text-xs font-mono">{cart.length}</span>
+          )}
         </button>
         <h1 className="text-2xl font-bold font-mono tracking-widest text-center mb-2">
           S-MUSH STORE

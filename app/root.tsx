@@ -10,9 +10,11 @@ import {
 import type { LinksFunction } from "@remix-run/node";
 // Other imports...
 import appStylesHref from "./styles/app.css?url";
+import styles from "./tailwind.css";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: appStylesHref },
+  { rel: "stylesheet", href: styles },
 ];
 
 export default function App() {
