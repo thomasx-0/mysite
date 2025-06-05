@@ -60,33 +60,35 @@ export default function Index() {
   };
 
   return (
-      <div className="container">
-        <header className="header">
-          <h1>Our Awesome Store</h1>
-          <button className="cart-toggle-btn" onClick={toggleCart}>
-            Cart ({cart.reduce((sum, item) => sum + item.quantity, 0)})
-          </button>
-        </header>
+    <div className="min-h-screen bg-white flex flex-col items-center px-2 py-4">
+      <header className="w-full flex flex-col items-center mb-4">
+        <button className="self-start mb-2 px-2 py-1 border border-black rounded-full text-xs font-mono tracking-widest hover:bg-gray-100">
+          TRAINER SIGN IN
+        </button>
+        <h1 className="text-2xl font-bold font-mono tracking-widest text-center mb-2">
+          S-MUSH STORE
+        </h1>
+      </header>
 
-        {isCartOpen && (
-            <CartDropdown
-                cartItems={cart}
-                onClose={toggleCart}
-                onRemoveItem={removeFromCart}
-                onUpdateQuantity={updateQuantity}
-                totalCost={calculateTotal()}
-                onCheckoutSuccess={() => {
-                  setCart([]); // Clear cart on successful checkout
-                  setIsCartOpen(false); // Close cart
-                }}
-            />
-        )}
+      {isCartOpen && (
+        <CartDropdown
+          cartItems={cart}
+          onClose={toggleCart}
+          onRemoveItem={removeFromCart}
+          onUpdateQuantity={updateQuantity}
+          totalCost={calculateTotal()}
+          onCheckoutSuccess={() => {
+            setCart([]); // Clear cart on successful checkout
+            setIsCartOpen(false); // Close cart
+          }}
+        />
+      )}
 
-        <main className="product-grid">
-          {products.map(product => (
-              <ProductBlock key={product.id} product={product} onAddToCart={addToCart} />
-          ))}
-        </main>
-      </div>
+      <main className="grid grid-cols-2 gap-3 w-full max-w-xs">
+        {products.map(product => (
+          <ProductBlock key={product.id} product={product} onAddToCart={addToCart} />
+        ))}
+      </main>
+    </div>
   );
 }

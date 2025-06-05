@@ -66,42 +66,56 @@ export default function CartDropdown({
     };
 
     return (
-        <div className="cart-dropdown-overlay">
-            <div className="cart-dropdown">
-                <button className="close-btn" onClick={onClose}>&times;</button>
-                <h2>Your Cart</h2>
+        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+            <div className="bg-white border-2 border-black rounded-2xl p-4 w-11/12 max-w-xs mx-auto flex flex-col items-center">
+                <button className="self-end text-2xl font-bold mb-2" onClick={onClose}>&times;</button>
+                <h2 className="font-mono text-lg font-bold mb-2">Your Cart</h2>
                 {cartItems.length === 0 ? (
-                    <p>Your cart is empty.</p>
+                    <p className="font-mono text-sm">Your cart is empty.</p>
                 ) : (
                     <>
-                        <ul>
+                        <ul className="w-full mb-2">
                             {cartItems.map(item => (
-                                <li key={item.id}>
-                                    {item.name} - ${item.cost.toFixed(2)} x
-                                    <input
-                                        type="number"
-                                        min="1"
-                                        value={item.quantity}
-                                        onChange={(e) => onUpdateQuantity(item.id, parseInt(e.target.value))}
-                                    />
-                                    = ${(item.cost * item.quantity).toFixed(2)}
-                                    <button onClick={() => onRemoveItem(item.id)}>Remove</button>
+                                <li key={item.id} className="flex flex-col items-center mb-2 border-b border-dotted border-gray-300 pb-1">
+                                    <span className="font-mono text-xs">{item.name}</span>
+                                    <span className="font-mono text-xs">
+                                        ${item.cost.toFixed(2)} x
+                                        <input
+                                            type="number"
+                                            min="1"
+                                            className="w-10 mx-1 border border-black rounded text-center"
+                                            value={item.quantity}
+                                            onChange={(e) => onUpdateQuantity(item.id, parseInt(e.target.value))}
+                                        />
+                                        = ${(item.cost * item.quantity).toFixed(2)}
+                                    </span>
+                                    <button
+                                        className="text-red-500 text-xs underline mt-1"
+                                        onClick={() => onRemoveItem(item.id)}
+                                    >
+                                        Remove
+                                    </button>
                                 </li>
                             ))}
                         </ul>
-                        <div className="cart-summary">
-                            <h3>Total: ${totalCost.toFixed(2)}</h3>
-                            <div className="checkout-section">
-                                <label htmlFor="checkout-code">Enter Code:</label>
+                        <div className="w-full flex flex-col items-center">
+                            <h3 className="font-mono text-base font-bold mb-2">Total: ${totalCost.toFixed(2)}</h3>
+                            <div className="w-full flex flex-col items-center">
+                                <label htmlFor="checkout-code" className="font-mono text-xs mb-1">Enter Code:</label>
                                 <input
                                     type="text"
                                     id="checkout-code"
+                                    className="border border-black rounded px-2 py-1 mb-1 w-full font-mono text-xs"
                                     value={checkoutCode}
                                     onChange={(e) => setCheckoutCode(e.target.value)}
                                     placeholder="Required Code"
                                 />
-                                {codeError && <p className="error-message">{codeError}</p>}
-                                <button onClick={handleCheckout} disabled={isProcessing || cartItems.length === 0}>
+                                {codeError && <p className="text-red-500 text-xs mb-1">{codeError}</p>}
+                                <button
+                                    className="bg-lime-400 hover:bg-lime-500 text-black font-bold font-mono text-xs rounded-xl px-4 py-1 border-2 border-black w-full"
+                                    onClick={handleCheckout}
+                                    disabled={isProcessing || cartItems.length === 0}
+                                >
                                     {isProcessing ? 'Processing...' : 'Checkout'}
                                 </button>
                             </div>
