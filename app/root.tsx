@@ -8,10 +8,10 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
-import styles from "./tailwind.css"; // Ensure this file exists in the correct location
+import tailwindStylesUrl from "./tailwind.css?url"; // Correct import for CSS files
 
 export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: styles },
+  { rel: "stylesheet", href: tailwindStylesUrl },
 ];
 
 export default function App() {
