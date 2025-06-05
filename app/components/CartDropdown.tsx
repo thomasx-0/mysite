@@ -11,41 +11,28 @@ interface CartDropdownProps {
     onCheckoutSuccess: () => void;
 }
 
-// Get all environment variable keys
-const envKeys = Object.keys(process.env);
-
-// Filter for keys starting with "TRAINER" and get their values
-const VALID_TRAINER_CODES: string[] = envKeys
-    .filter(key => key.startsWith("TRAINER_"))
-    .map(key => process.env[key])
-    .filter((value): value is string => typeof value === 'string');
-
-if (VALID_TRAINER_CODES.length === 0) {
-    console.warn("WARNING: No TRAINER_ checkout codes found in environment variables.");
-}
-
 export default function CartDropdown({
-                                         cartItems,
-                                         onClose,
-                                         onRemoveItem,
-                                         onUpdateQuantity,
-                                         totalCost,
-                                         onCheckoutSuccess,
-                                     }: CartDropdownProps) {
+    cartItems,
+    onClose,
+    onRemoveItem,
+    onUpdateQuantity,
+    totalCost,
+    onCheckoutSuccess,
+}: CartDropdownProps) {
     const [checkoutCode, setCheckoutCode] = useState("");
     const [codeError, setCodeError] = useState("");
     const [isProcessing, setIsProcessing] = useState(false);
 
     const handleCheckout = async () => {
-        if (!VALID_TRAINER_CODES.includes(checkoutCode)) {
-            setCodeError("Invalid checkout code.");
+        if (!checkoutCode.trim()) {
+            setCodeError("Please enter a checkout code.");
             return;
         }
         setCodeError("");
         setIsProcessing(true);
 
         try {
-            const response = await fetch("/api/checkout", { // Remix Action endpoint
+            const response = await fetch("/api/checkout", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -68,11 +55,11 @@ export default function CartDropdown({
                 onCheckoutSuccess();
             } else {
                 const errorData = await response.json();
-                alert(`Checkout failed: ${errorData.message}`);
+                setCodeError(errorData.message || "Checkout failed");
             }
         } catch (error) {
             console.error("Checkout error:", error);
-            alert("An unexpected error occurred during checkout.");
+            setCodeError("An unexpected error occurred during checkout.");
         } finally {
             setIsProcessing(false);
         }
