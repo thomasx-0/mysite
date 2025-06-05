@@ -8,12 +8,9 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
-// Other imports...
-import appStylesHref from "./styles/app.css?url";
-import styles from "./tailwind.css";
+import styles from "./tailwind.css"; // Ensure this file exists in the correct location
 
 export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: appStylesHref },
   { rel: "stylesheet", href: styles },
 ];
 
@@ -31,7 +28,7 @@ export default function App() {
       <body>
       <Outlet />
       <ScrollRestoration />
-      <Scripts />
+      <Scripts /> {/* <-- This is required for client-side JS */}
       <LiveReload />
       </body>
       </html>
