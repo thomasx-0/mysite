@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5d15ed5-e296-471f-ac78-634b0fe0a26b" name="Changes" comment="update to links">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="b5d15ed5-e296-471f-ac78-634b0fe0a26b" name="Changes" comment="feat: Add ProductBlock component for product display">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/ProductBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/ProductBlock.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes/api.checkout.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/api.checkout.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/products.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/products.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +62,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "com.android.studio.ml.bot.mainConfigurable",
     "ts.external.directory.path": "C:\\Users\\smush\\WebstormProjects\\mysite\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -87,7 +82,7 @@
       <option name="presentableId" value="Default" />
       <updated>1749086225539</updated>
       <workItem from="1749086226587" duration="212000" />
-      <workItem from="1749086457814" duration="2342000" />
+      <workItem from="1749086457814" duration="2712000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -121,7 +116,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749088012421</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: Add ProductBlock component for product display">
+      <option name="closed" value="true" />
+      <created>1749088874784</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1749088874784</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +134,7 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="Injected code snippets into project" />
     <MESSAGE value="update to links" />
-    <option name="LAST_COMMIT_MESSAGE" value="update to links" />
+    <MESSAGE value="feat: Add ProductBlock component for product display" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Add ProductBlock component for product display" />
   </component>
 </project>
