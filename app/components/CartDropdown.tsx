@@ -69,9 +69,9 @@ export default function CartDropdown({
         <div className="absolute top-0 left-0 w-full h-full bg-white p-[10%]">
             <div className="bg-white border-2 border-black rounded-2xl p-4 w-11/12 max-w-xs mx-auto flex flex-col items-center">
                 <button className="self-end text-2xl font-bold mb-2" onClick={onClose}>&times;</button>
-                <h2 className="font-mono text-lg font-bold mb-2">Your Cart</h2>
+                <h2 className="font-mono text-lg font-bold mb-2">Su Cesta</h2>
                 {cartItems.length === 0 ? (
-                    <p className="font-mono text-sm">Your cart is empty.</p>
+                    <p className="font-mono text-sm">Su Cesta Está Vacía</p>
                 ) : (
                     <>
                         <ul className="w-full mb-2">
@@ -93,7 +93,7 @@ export default function CartDropdown({
                                         className="text-red-500 text-xs underline mt-1"
                                         onClick={() => onRemoveItem(item.id)}
                                     >
-                                        Remove
+                                        Borrar
                                     </button>
                                 </li>
                             ))}
@@ -101,14 +101,14 @@ export default function CartDropdown({
                         <div className="w-full flex flex-col items-center">
                             <h3 className="font-mono text-base font-bold mb-2">Total: ${totalCost.toFixed(2)}</h3>
                             <div className="w-full flex flex-col items-center">
-                                <label htmlFor="checkout-code" className="font-mono text-xs mb-1">Enter Code:</label>
+                                <label htmlFor="checkout-code" className="font-mono text-xs mb-1">Introducir Código:</label>
                                 <input
                                     type="text"
                                     id="checkout-code"
                                     className="border border-black rounded px-2 py-1 mb-1 w-full font-mono text-xs"
                                     value={checkoutCode}
                                     onChange={(e) => setCheckoutCode(e.target.value)}
-                                    placeholder="Required Code"
+                                    placeholder="Código de entrenador"
                                 />
                                 {codeError && <p className="text-red-500 text-xs mb-1">{codeError}</p>}
                                 <button
@@ -116,7 +116,7 @@ export default function CartDropdown({
                                     onClick={handleCheckout}
                                     disabled={isProcessing || cartItems.length === 0}
                                 >
-                                    {isProcessing ? 'Processing...' : 'Checkout'}
+                                    {isProcessing ? 'Procesando...' : 'Pedido'}
                                 </button>
                             </div>
                         </div>

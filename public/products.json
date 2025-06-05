@@ -2,13 +2,56 @@
   {
     "id": "prod001",
     "name": "Super Widget",
-    "cost": 19.99,
-    "description": "A very super widget indeed."
+    "cost": 19.99
   },
   {
     "id": "prod002",
     "name": "Mega Gadget",
-    "cost": 29.50,
-    "description": "This gadget will change your life."
+    "cost": 29.50
+  },
+  {
+    "id": "prod003",
+    "name": "Fresa 500g",
+    "cost": 500
+  },
+  {
+    "id": "prod004",
+    "name": "Fresa 2.5kg",
+    "cost": 2000
+  },
+  {
+    "id": "prod005",
+    "name": "Fresa 5kg",
+    "cost": 4000
+  },
+  {
+    "id": "prod006",
+    "name": "Moka 500g",
+    "cost": 500
+  },
+  {
+    "id": "prod007",
+    "name": "Moka 2.5kg",
+    "cost": 2000
+  },
+  {
+    "id": "prod008",
+    "name": "Moka 5kg",
+    "cost": 4000
+  },
+  {
+    "id": "prod009",
+    "name": "Chocolate 500g",
+    "cost": 500
+  },
+  {
+    "id": "prod010",
+    "name": "Chocolate 2.5kg",
+    "cost": 2000
+  },
+  {
+    "id": "prod011",
+    "name": "Chocolate 5kg",
+    "cost": 4000
   }
 ]

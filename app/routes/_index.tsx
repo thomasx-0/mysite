@@ -60,16 +60,18 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col items-start px-2 py-4">
-      <header className="w-full flex flex-col items-start mb-4">
+      <header className="w-full flex flex-col items-start mb-4 p-[5%]">
         <button
           className="self-start mb-2 px-2 py-1 border border-black rounded-full text-xs font-mono tracking-widest hover:bg-gray-100 flex items-center gap-1"
           onClick={toggleCart}
           aria-label="Open cart"
         >
           🛒
-          <span className="ml-1">CART</span>
+          <span className="ml-1">CARRITO</span>
           {cart.length > 0 && (
-            <span className="ml-2 bg-black text-white rounded-full px-2 py-0.5 text-xs font-mono">{cart.length}</span>
+            <span className="ml-2 bg-black text-white rounded-full px-2 py-0.5 text-xs font-mono">
+              {cart.reduce((total, item) => total + item.quantity, 0)}
+            </span>
           )}
         </button>
         <h1 className="text-2xl font-bold font-mono tracking-widest text-left mb-2">
@@ -91,7 +93,7 @@ export default function Index() {
         />
       )}
 
-      <main className="grid grid-cols-2 gap-3 w-full max-w-xs px-[10%] py-[10%]">
+      <main className="grid grid-cols-2 gap-3 w-full max-w-xs px-[8%] py-[5%]">
         {products.map(product => (
           <ProductBlock
             key={product.id}
