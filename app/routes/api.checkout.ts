@@ -5,7 +5,7 @@ import type { Order } from "~/types";
 
 // **WARNING: For security, the REQUIRED_CHECKOUT_CODE should ideally be fetched from a secure source (e.g., environment variable)
 // or be part of a more robust authentication/coupon system, NOT hardcoded.**
-const SERVER_REQUIRED_CHECKOUT_CODE = "SECRET123";
+const SERVER_REQUIRED_CHECKOUT_CODE = process.env.CHECKOUT_CODE_SECRET_1;
 
 export const action: ActionFunction = async ({ request }) => {
     if (request.method !== "POST") {
