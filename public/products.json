@@ -1,0 +1,16 @@
+[
+  {
+    "id": "prod001",
+    "name": "Super Widget",
+    "cost": 19.99,
+    "image": "/images/widget.jpg",
+    "description": "A very super widget indeed."
+  },
+  {
+    "id": "prod002",
+    "name": "Mega Gadget",
+    "cost": 29.50,
+    "image": "/images/gadget.jpg",
+    "description": "This gadget will change your life."
+  }
+]
