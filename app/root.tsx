@@ -8,11 +8,12 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
-import styles from "./styles/app.css"; // Import your CSS
+// Other imports...
+import appStylesHref from "./styles/app.css?url";
 
-export const links: LinksFunction = () => {
-  return [{ rel: "stylesheet", href: styles }];
-};
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: appStylesHref },
+];
 
 export default function App() {
   return (
@@ -21,7 +22,9 @@ export default function App() {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
-        <Links />
+        <Links /><title>
+        S-MUSH STORE
+      </title>
       </head>
       <body>
       <Outlet />
