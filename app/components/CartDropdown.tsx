@@ -11,7 +11,18 @@ interface CartDropdownProps {
     onCheckoutSuccess: () => void;
 }
 
-const REQUIRED_CHECKOUT_CODE = "SECRET123"; // **WARNING: For client-side dev only! Move to server-side for production.**
+// Get all environment variable keys
+const envKeys = Object.keys(process.env);
+
+// Filter for keys starting with "TRAINER" and get their values
+const VALID_TRAINER_CODES: string[] = envKeys
+    .filter(key => key.startsWith("TRAINER_"))
+    .map(key => process.env[key])
+    .filter((value): value is string => typeof value === 'string');
+
+if (VALID_TRAINER_CODES.length === 0) {
+    console.warn("WARNING: No TRAINER_ checkout codes found in environment variables.");
+}
 
 export default function CartDropdown({
                                          cartItems,
@@ -26,7 +37,7 @@ export default function CartDropdown({
     const [isProcessing, setIsProcessing] = useState(false);
 
     const handleCheckout = async () => {
-        if (checkoutCode !== REQUIRED_CHECKOUT_CODE) {
+        if (!VALID_TRAINER_CODES.includes(checkoutCode)) {
             setCodeError("Invalid checkout code.");
             return;
         }
