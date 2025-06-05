@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5d15ed5-e296-471f-ac78-634b0fe0a26b" name="Changes" comment="feat: Add ProductBlock component for product display">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b5d15ed5-e296-471f-ac78-634b0fe0a26b" name="Changes" comment="Refactored and changed checkout codes for api.checkout.ts">
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes/api.checkout.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/api.checkout.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +82,7 @@
       <option name="presentableId" value="Default" />
       <updated>1749086225539</updated>
       <workItem from="1749086226587" duration="212000" />
-      <workItem from="1749086457814" duration="2712000" />
+      <workItem from="1749086457814" duration="3158000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -124,7 +124,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749088874784</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Refactored and changed checkout codes for api.checkout.ts">
+      <option name="closed" value="true" />
+      <created>1749089247368</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1749089247368</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +143,7 @@
     <MESSAGE value="Injected code snippets into project" />
     <MESSAGE value="update to links" />
     <MESSAGE value="feat: Add ProductBlock component for product display" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Add ProductBlock component for product display" />
+    <MESSAGE value="Refactored and changed checkout codes for api.checkout.ts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored and changed checkout codes for api.checkout.ts" />
   </component>
 </project>
