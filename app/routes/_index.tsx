@@ -46,21 +46,21 @@ export default function Index() {
 
   const updateQuantity = (productId: string, quantity: number) => {
     setCart(prevCart =>
-        prevCart.map(item =>
-            item.id === productId ? { ...item, quantity: Math.max(1, quantity) } : item
-        )
+      prevCart.map(item =>
+        item.id === productId ? { ...item, quantity: Math.max(1, quantity) } : item
+      )
     );
   };
 
   const toggleCart = () => setIsCartOpen(prev => !prev);
 
   const calculateTotal = () => {
-    return cart.reduce((sum, item) => sum + (item.cost * item.quantity), 0);
+    return cart.reduce((sum, item) => sum + item.cost * item.quantity, 0);
   };
 
   return (
     <div className="min-h-screen bg-white flex flex-col items-start px-2 py-4">
-      <header className="w-full flex flex-col items-start mb-4 p-[5%]">
+      <header className="w-full flex flex-col items-start mb-4 p-[5%] relative">
         <button
           className="self-start mb-2 px-2 py-1 border border-black rounded-full text-xs font-mono tracking-widest hover:bg-gray-100 flex items-center gap-1"
           onClick={toggleCart}
@@ -74,32 +74,29 @@ export default function Index() {
             </span>
           )}
         </button>
+        {isCartOpen && (
+          <div className="absolute top-full left-0 w-full">
+            <CartDropdown
+              cartItems={cart}
+              onClose={toggleCart}
+              onRemoveItem={removeFromCart}
+              onUpdateQuantity={updateQuantity}
+              totalCost={calculateTotal()}
+              onCheckoutSuccess={() => {
+                setCart([]); // Clear cart on successful checkout
+                setIsCartOpen(false); // Close cart
+              }}
+            />
+          </div>
+        )}
         <h1 className="text-2xl font-bold font-mono tracking-widest text-left mb-2">
           S-MUSH TIENDA
         </h1>
       </header>
 
-      {isCartOpen && (
-        <CartDropdown
-          cartItems={cart}
-          onClose={toggleCart}
-          onRemoveItem={removeFromCart}
-          onUpdateQuantity={updateQuantity}
-          totalCost={calculateTotal()}
-          onCheckoutSuccess={() => {
-            setCart([]); // Clear cart on successful checkout
-            setIsCartOpen(false); // Close cart
-          }}
-        />
-      )}
-
       <main className="grid grid-cols-2 gap-3 w-full max-w-xs px-[5%] py-[5%]">
         {products.map(product => (
-          <ProductBlock
-            key={product.id}
-            product={product}
-            onAddToCart={addToCart}
-          />
+          <ProductBlock key={product.id} product={product} onAddToCart={addToCart} />
         ))}
       </main>
     </div>
