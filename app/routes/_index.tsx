@@ -90,7 +90,7 @@ export default function Index() {
           </div>
         )}
         <h1 className="text-2xl font-bold font-mono tracking-widest text-left mb-2">
-          S-MUSH TIENDA
+          S-MUSH 🌱IENDA
         </h1>
       </header>
 
