@@ -22,7 +22,7 @@ export default function App() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links /><title>
-        S-MUSH STORE
+        S-MUSH 🌱IENDA
       </title>
       </head>
       <body>

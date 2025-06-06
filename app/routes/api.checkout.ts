@@ -1,4 +1,3 @@
-// app/routes/api.checkout.ts
 import {json, type ActionFunction} from "@remix-run/node";
 import {createOrder} from "~/db.server";
 import type {Order} from "~/types";
@@ -15,8 +14,6 @@ const VALID_TRAINER_CODES: string[] = envKeys
 if (VALID_TRAINER_CODES.length === 0) {
     console.warn("WARNING: No TRAINER_ checkout codes found in environment variables.");
 }
-// Add this log to see what codes the server has loaded:
-console.log("DEBUG: Loaded VALID_TRAINER_CODES:", VALID_TRAINER_CODES);
 
 export const action: ActionFunction = async ({request}) => {
     if (request.method !== "POST") {
@@ -26,9 +23,6 @@ export const action: ActionFunction = async ({request}) => {
     try {
         const formData = await request.json();
         const {cart, checkoutCode, totalCost} = formData;
-
-        // Add this log to see what code the server received:
-        console.log("DEBUG: Received checkoutCode from client:", checkoutCode);
 
         if (VALID_TRAINER_CODES.includes(checkoutCode)) {
             if (!cart || !Array.isArray(cart) || cart.length === 0 || typeof totalCost === 'undefined') {
@@ -42,8 +36,6 @@ export const action: ActionFunction = async ({request}) => {
             const orderId = await createOrder(order);
             return json({message: "Order placed successfully!", orderId});
         } else {
-            // This is where your error is likely originating
-            console.log(`DEBUG: Checkout code "${checkoutCode}" not found in VALID_TRAINER_CODES.`);
             return json({message: "Invalid checkout code."}, {status: 401});
         }
     } catch (error: any) {

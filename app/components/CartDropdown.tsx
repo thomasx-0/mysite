@@ -72,7 +72,7 @@ export default function CartDropdown({
   };
 
   return (
-    <div className="absolute bg-white border-2 border-black rounded-2xl p-4 w-full max-w-xs mx-auto flex flex-col items-center z-50">
+    <div className="absolute bg-white border-2 border-slate-200 rounded-2xl p-4 w-full max-w-xs mx-auto flex flex-col items-center z-50">
       <button className="self-end text-2xl font-bold mb-2" onClick={onClose}>
         &times;
       </button>
@@ -85,22 +85,20 @@ export default function CartDropdown({
             {cartItems.map(item => (
               <li
                 key={item.id}
-                className="flex flex-col items-center mb-2 border-b border-dotted border-gray-300 pb-1"
+                className="flex items-center justify-between mb-2 border-b border-dotted border-gray-300 pb-1"
               >
                 <span className="font-mono text-xs">{item.name}</span>
                 <span className="font-mono text-xs">
-                  ${item.cost.toFixed(2)} x
+                  Modificar Importe
                   <input
                     type="number"
                     min="1"
                     className="w-10 mx-1 border border-black rounded text-center"
-                    value={item.quantity}
                     onChange={e => onUpdateQuantity(item.id, parseInt(e.target.value))}
                   />
-                  = ${(item.cost * item.quantity).toFixed(2)}
                 </span>
                 <button
-                  className="text-green-500 text-xs underline mt-1"
+                  className="bg-lime-100 text-lime-600 font-mono text-xs rounded-full px-2 py-1 ml-2"
                   onClick={() => onRemoveItem(item.id)}
                 >
                   Borrar
@@ -122,7 +120,7 @@ export default function CartDropdown({
                 onChange={e => setCheckoutCode(e.target.value)}
                 placeholder="Código de entrenador"
               />
-              {codeError && <p className="text-green-500 text-xs mb-1">{codeError}</p>}
+              {codeError && <p className="text-lime-400 text-xs mb-1">{codeError}</p>}
               <button
                 className="bg-lime-200 hover:bg-lime-300 text-black font-bold font-mono text-xs rounded-xl px-4 py-1 border-1 border-black w-full relative overflow-hidden"
                 onClick={handleCheckout}
