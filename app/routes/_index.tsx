@@ -93,7 +93,7 @@ export default function Index() {
         />
       )}
 
-      <main className="grid grid-cols-2 gap-3 w-full max-w-xs px-[8%] py-[5%]">
+      <main className="grid grid-cols-2 gap-3 w-full max-w-xs px-[5%] py-[5%]">
         {products.map(product => (
           <ProductBlock
             key={product.id}

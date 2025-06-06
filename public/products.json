@@ -1,15 +1,5 @@
 [
   {
-    "id": "prod001",
-    "name": "Super Widget",
-    "cost": 19.99
-  },
-  {
-    "id": "prod002",
-    "name": "Mega Gadget",
-    "cost": 29.50
-  },
-  {
     "id": "prod003",
     "name": "Fresa 500g",
     "cost": 500
